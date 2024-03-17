@@ -46,7 +46,7 @@ RUN useradd \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
 RUN RUN tar -xvzf UnifiedLinuxDriver* \
-    && cp rastertospl /usr/lib/cups/filter/rastertospl
+    && cp /rastertospl /usr/lib/cups/filter/rastertospl
     
 EXPOSE 631
 
