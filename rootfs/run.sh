@@ -11,9 +11,6 @@ cp -v -R /etc/cups /config/addons_config
 rm -v -fR /etc/cups
 
 ln -v -s /config/addons_config/cups /etc/cups
-echo this is the contents of root folder
-ls
-#ln -v -s /config/addons_config/cups/filter /usr/lib/cups/filter
 
 bashio::log.info "Starting CUPS server as CMD from S6"
 
