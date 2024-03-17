@@ -11,6 +11,7 @@ cp -v -R /etc/cups /data
 rm -v -fR /etc/cups
 
 ln -v -s /data/cups /etc/cups
+ln -v -s /data/cups /config/addons_config/cups
 
 bashio::log.info "Starting CUPS server as CMD from S6"
 
