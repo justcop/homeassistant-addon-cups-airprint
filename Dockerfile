@@ -29,7 +29,6 @@ RUN apt-get update \
         bash-completion \
         procps \
         whois \
-        printer-driver-splix \
 
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
@@ -47,10 +46,8 @@ RUN useradd \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
 RUN tar -xvzf UnifiedLinuxDriver* \
-    && cp rastertospl /usr/lib/cups/filter/rastertospl \
-    && cd /uld \
-    && chmod +x install-printer.sh \
-    && ./install-printer.sh \
+    && chmod +x /uld/install-printer.sh \
+    && ./uld/install-printer.sh \
     
 
 EXPOSE 631
