@@ -46,7 +46,7 @@ RUN useradd \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
-RUN tar -xvzf UnifiedLinuxDriver*
+RUN tar -xvzf UnifiedLinuxDriver* \
     && bash /uld/install-printer.sh
 
 EXPOSE 631
