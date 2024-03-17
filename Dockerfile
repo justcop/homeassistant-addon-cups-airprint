@@ -31,6 +31,13 @@ RUN apt-get update \
         whois \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+    && sudo apt-get install git build-essential libcups2-dev
+    && git clone https://gitlab.com/ScumCoder/splix/tree/patches/splix
+    && git clone https://github.com/nu774/jbigkit.git
+    && cd jbigkit && cp Makefile.original Makefile && make
+    && cd libjbig && cp libjbig85.a /usr/lib && cd ../..
+    && cd splix/splix && make && sudo make install
+    && sudo cp ppd/m2020.ppd /usr/share/cups/model/
     
 COPY rootfs /
 
