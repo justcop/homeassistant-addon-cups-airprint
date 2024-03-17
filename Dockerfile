@@ -31,8 +31,7 @@ RUN apt-get update \
         whois \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
-    && mkdir /config/addons_config/cups
-
+    
 COPY rootfs /
 
 # Add user and disable sudo password checking
